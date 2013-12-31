@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="generator" content="nico 0.5.0">
+    <meta name="theme" content="one 0.1">
+    <title>前端开发中的一些雷区</title>
+    <link rel="stylesheet" href="../static/one.css" />
+    <link rel="stylesheet" href="../static/syntax.css" />
+  </head>
+  <body>
+    <div class="navigation" role="navigation">
+      <div class="container">
+        <a class="home" href="../">前端 Style</a>
+        <div class="menu">
+          <a href="../index.html">首页</a>
+          <a href="./">Wiki</a>
+          <a href="../sites.html">酷站</a>
+          <a href="../standard/index.html">规范</a>
+          <a href="../fed/index.html">FED</a>
+        </div>
+      </div>
+    </div>
+    <div class="document">
+<div class="hentry">
+  <h1 class="entry-title">前端开发中的一些雷区</h1>
+  <div class="entry-content"><p>@[前端开发|兼容性问题|自测心得]</p>
+<p>每个前端开发人员，在最初开发一个产品的时候，都信誓旦旦要做好这个产品的用户体验。但是在团队配合中，一些时间和资源上的紧张，可能会使开发人员在临近某个功能结束的时间节点是忘记一些事情。但无论如何，开发人员应该把每一个他所能控制的点都做到靠谱。  </p>
+<p>在经过经验教训之后，我决定整理一下在开发期间（或开发与测试人员交接期间），前端开发人员容易忽略的点。</p>
+<p>因为不能确定以后就不会踩坑，所以，我会不定期的更新。当然，如果没有错误的发生，也就没有了进步的可能。</p>
+<h2 id="html坑">HTML坑</h2><ul>
+<li>doctype要加上，如果不加会出现诡异问题，比如margin:0 auto不好用等，现在都会使用&lt;!doctype html&gt;。</li>
+</ul>
+<h2 id="css坑">CSS坑</h2><ul>
+<li>在为某元素写好CSS样式后，要检查该元素的各种极限值，看是否在极限值的时候还会正常的显示，比如文字超过元素大小，是隐藏还是显示为省略号。</li>
+<li>在切图时，兼容性大体没问题的时候也不要过于乐观，要看一下网页在各个分辨率下的表现，从800*600一直看到设计师给定的最大宽度尺寸位置。如果不看不同分辨率下的表现，很容易造成背景图片或者元素错位的情况。</li>
+<li>对自己已了解解决方案的兼容性问题，应该在做完一个页面的时候逐个排查，比如昨天开发时候知道了IE6下img元素的title在hover状态下可能不会显示tip，今天在做新功能的时候不要忘记自测。如果之前遇到的坑比较多，建议用笔记的方式记录，这样方便快速的回忆起解决方案，提升效率。</li>
+</ul>
+<h2 id="javascript坑">javascript坑</h2><p>这种坑比较危险，哥的页面在线上中弹身亡，就是因为一些很低级的疏忽，血的教训，同志们记住啊。。</p>
+<ul>
+<li>开发完功能后，要将代码中的调试代码全部删掉，我的页面就死在console.log上了，IE不认识它，于是功能全部down掉了。</li>
+<li>debugger也全删了，一个不留，哥害怕。</li>
+</ul>
+<p>今儿就这么多，碰到坑再往里加。</p>
+</div>
+</div>
+</div>
+    <div class="footer">
+      <p>By zhangxingkai CY2848. Tel: 15810885265</p>
+      <p class="copyright">powered by <a href="http://lab.lepture.com/nico/">nico</a> 0.5.0</p>
+    </div>
+    <script src="http://static.alipayobjects.com/seajs/1.2.1/sea.js" data-main="../static/one.js"></script>
+  </body>
+</html>
