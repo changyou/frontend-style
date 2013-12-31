@@ -9,7 +9,12 @@
 3. [我们使用哪些东东?](./whatdoweuse.html)
 4. [我们是如何工作的?](./howdowework.html)
 
+
 ## 修炼之道
 
 1. [How to keep up to date on Front-end Technologies?](http://uptodate.frontendrescue.org/), [frontend-rescue / keep-up-to-date](https://github.com/frontend-rescue/keep-up-to-date).
 2. 
+
+## 经验分享
+
+1.[前端开发中的一些雷区](./bugsweeper.html)
