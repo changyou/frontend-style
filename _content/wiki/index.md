@@ -12,8 +12,8 @@
 
 ## 修炼之道
 
-1. [How to keep up to date on Front-end Technologies?](http://uptodate.frontendrescue.org/), [frontend-rescue / keep-up-to-date](https://github.com/frontend-rescue/keep-up-to-date).
-2. 
+1. [How to keep up to date on Front-end Technologies?](http://uptodate.frontendrescue.org/) 
+2. [frontend-rescue / keep-up-to-date](https://github.com/frontend-rescue/keep-up-to-date)
 
 ## 经验分享
 
