@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="generator" content="nico 0.5.1">
+    <meta name="theme" content="one 0.1">
+    <title>Sublime Text3</title>
+    <link rel="stylesheet" href="../../static/one.css" />
+    <link rel="stylesheet" href="../../static/syntax.css" />
+  </head>
+  <body>
+    <div class="navigation" role="navigation">
+      <div class="container">
+        <a class="home" href="../../">前端 Style</a>
+        <div class="menu">
+          <a href="../../index.html">首页</a>
+          <a href="../index.html">Wiki</a>
+          <a href="../../sites.html">酷站</a>
+          <a href="../../standard/index.html">规范</a>
+          <a href="../../fed/index.html">FED</a>
+        </div>
+      </div>
+    </div>
+    <div class="document">
+<div class="hentry">
+  <h1 class="entry-title">Sublime Text3</h1>
+  <div class="entry-content"><p>sublime text 前端必备开发利器</p>
+<h2 id="安装插件">安装插件</h2><blockquote>
+<p>直接安装：</p>
+</blockquote>
+<ul>
+<li>下载安装包，解压到Packages目录 (菜单 -&gt; preferences -&gt; packages)</li>
+</ul>
+<hr>
+<blockquote>
+<p>Package Control组件安装：</p>
+</blockquote>
+<ul>
+<li>安装Package Control</li>
+</ul>
+<p>　　自动安装：</p>
+<ol>
+<li>通过 ctrl + ` 或者 View -&gt; Show Console 菜单打开控制台</li>
+<li>粘贴对应版本的代码回车安装</li>
+</ol>
+<blockquote>
+<p>sublime text3</p>
+<blockquote>
+<pre>import  urllib.request,os;pf=&#39;Package Control.sublime-package&#39;;ipp=sublime.installed_packages_path();urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler()));open(os.path.join(ipp,pf),&#39;wb&#39;).write(urllib.request.urlopen(&#39;http://sublime.wbond.net/&#39;+pf.replace(&#39; &#39;,&#39;%20&#39;)).read())</pre></blockquote>
+<p>sublime text2</p>
+<blockquote>
+<pre>import  urllib2,os;pf=&#39;Package Control.sublime-package&#39;;ipp=sublime.installed_packages_path();os.makedirs(ipp)ifnotos.path.exists(ipp)elseNone;urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler()));open(os.path.join(ipp,pf),&#39;wb&#39;).write(urllib2.urlopen(&#39;http://sublime.wbond.net/&#39;+pf.replace(&#39; &#39;,&#39;%20&#39;)).read());print(&#39;Please restart Sublime Text to finish installation&#39;)</pre></blockquote>
+</blockquote>
+<p>　　手动安装：</p>
+<ol>
+<li>Preferences -&gt; Browse Packages</li>
+<li>进入Installed Packages/ 目录</li>
+<li>下载Package Control.sublime-package，并且复制文件到Installed Packages/ 目录</li>
+<li>重启Sublime Text</li>
+</ol>
+<ul>
+<li>安装插件</li>
+</ul>
+<ol>
+<li>按下 Ctrl + Shift + P 调出命令面板</li>
+<li>输入 install 调出 Install Package 选项并回车，然后在列表中选中要安装的插件</li>
+</ol>
+<h2 id="常用插件">常用插件</h2><ul>
+<li><p>Package Manager</p>
+</li>
+<li><p>LESS/CoffeeScript SyntaxHighlighter Less/Coffee 代码高亮</p>
+</li>
+<li><p>Better Coffeescript</p>
+</li>
+<li><p>Coffee Compile</p>
+</li>
+<li><p>Emmet 提供一种简练的语法规则，立刻生成对应的HTML结构或CSS代码</p>
+</li>
+<li><p>Trainling Spaces</p>
+</li>
+<li><p>Sublime Linter 代码校验插件，支持多种语言</p>
+</li>
+<li><p>Sublime Prefixr CSS3私有前缀自动补全插件</p>
+</li>
+<li><p>Live Reload 即时刷新页面</p>
+</li>
+<li><p>Code Formatter 代码格式化</p>
+</li>
+<li><p>DocBlockr</p>
+</li>
+<li><p>JSFormat JavaScript 代码格式化</p>
+</li>
+<li><p>Git git相关插件</p>
+</li>
+<li><p>Pretty JSON</p>
+</li>
+<li><p>Angular</p>
+</li>
+</ul>
+<h2 id="快捷键参考">快捷键参考</h2><p>快捷键设置：</p>
+<pre>[
+    { &quot;keys&quot;: [&quot;ctrl+d&quot;], &quot;command&quot;: &quot;run_macro_file&quot;, &quot;args&quot;: {&quot;file&quot;: &quot;res://Packages/Default/Delete Line.sublime-macro&quot;} }
+    ,
+    { &quot;keys&quot;: [&quot;ctrl+shift+k&quot;], &quot;command&quot;: &quot;find_under_expand&quot; }
+]</pre><p>全局设置：</p>
+<pre>{
+    &quot;color_scheme&quot;: &quot;Packages/Color Scheme - Default/Sunburst.tmTheme&quot;,
+    &quot;font_size&quot;: 11
+}</pre><h2 id="实用技巧">实用技巧</h2><p>实用快捷键：
+Alt + Shift + NUM (分屏)</p>
+</div>
+</div>
+</div>
+    <div class="footer">
+      <p>By zhangxingkai CY2848. Tel: 15810885265</p>
+      <p class="copyright">powered by <a href="http://lab.lepture.com/nico/">nico</a> 0.5.1</p>
+    </div>
+    <script src="http://static.alipayobjects.com/seajs/1.2.1/sea.js" data-main="../../static/one.js"></script>
+  </body>
+</html>

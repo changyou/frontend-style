@@ -10,7 +10,7 @@
 
 1. 克隆代码
 
-        git clone https://github.com/XingKaiZhang/frontend-style.git
+        git clone https://github.com/changyou/frontend-style.git
 
 2. 执行如下命令
 
