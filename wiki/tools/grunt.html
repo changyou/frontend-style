@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="generator" content="nico 0.5.1">
+    <meta name="theme" content="one 0.1">
+    <title>Grunt</title>
+    <link rel="stylesheet" href="../../static/one.css" />
+    <link rel="stylesheet" href="../../static/syntax.css" />
+  </head>
+  <body>
+    <div class="navigation" role="navigation">
+      <div class="container">
+        <a class="home" href="../../">前端 Style</a>
+        <div class="menu">
+          <a href="../../index.html">首页</a>
+          <a href="../index.html">Wiki</a>
+          <a href="../../sites.html">酷站</a>
+          <a href="../../standard/index.html">规范</a>
+          <a href="../../fed/index.html">FED</a>
+        </div>
+      </div>
+    </div>
+    <div class="document">
+<div class="hentry">
+  <h1 class="entry-title">Grunt</h1>
+  <div class="entry-content"><p>任务自动管理工具，<a href="http://javascript.ruanyifeng.com/tool/grunt.html#toc4">详解(需要翻墙)</a></p>
+<h2 id="安装">安装</h2><p>Grunt 基于 node.js ，安装之前请先安装node.js / npm</p>
+<p>grunt-cli 表示安装grunt的命令行界面</p>
+<pre>npm install grunt-cli -g</pre><p>grunt  使用模块结构，除了命令行界面意外，还根据需要安装相应的模块。
+（不同项目可能需要同一个模块的不同版本，因而建议分开安装）</p>
+<ul>
+<li>手动创建package.json</li>
+</ul>
+<ol>
+<li>在项目根目录下，创建一个文本文件package.json,指定当前项目所需要的模块。</li>
+</ol>
+<pre>{
+    &quot;name&quot;: &quot;my-project-name&quot;,
+    &quot;version&quot;: &quot;0.1.0&quot;,
+    &quot;devDependencies&quot;: {
+         &quot;grunt&quot;: &quot;0.4.*&quot;,
+         &quot;grunt-contrib-clean&quot;: &quot;~0.5.0&quot;,
+         &quot;grunt-contrib-coffee&quot;: &quot;~0.10.1&quot;,
+         &quot;grunt-contrib-less&quot;: &quot;~0.9.0&quot;,
+         &quot;grunt-contrib-yuidoc&quot;: &quot;~0.5.0&quot;
+    }
+}</pre><ol>
+<li>在项目根目录下运行下面的命令，这些插件就会被自动安装在node_modules子目录中。</li>
+</ol>
+<pre>npm install</pre><ul>
+<li>自动生成package.json</li>
+</ul>
+<p>使用以下命令，按屏幕提示回到所需模块的名称和版本即可</p>
+<pre>npm init</pre><ul>
+<li>已有package.json 文件不包括grunt模块。</li>
+</ul>
+<p>可以在直接安装grunt模块的时候，加上--save-dev参数，该模块就会自动被加入package.json文件。</p>
+<pre>npm install &lt;module&gt; --save-dev</pre><p>比如，对应上面package.json文件指定的模块，需要运行以下npm命令。</p>
+<pre>npm install grunt --save-dev
+npm install grunt-contrib-clean --save-dev
+npm install grunt-contrib-coffee --save-dev
+npm install grunt-contrib-less --save-dev
+npm install grunt-contrib-yuidoc --save-dev</pre><h2 id="gruntfile-js-命令脚本文件">gruntfile.js 命令脚本文件</h2><p>根目录下，新建gruntfile.js || gruntfile.coffee 脚本文件，他是grunt的配置文件</p>
+<p>gruntfile.js 就是一般的 node.js 模块的写法</p>
+<p>JS版</p>
+<pre>module.exports = function(grunt) {
+
+    //  配置Grunt各种模块的参数
+    grunt.initConfig({
+    pkg: grunt.file.readJSON(&#39;package.json&#39;),
+     jshint: { /* jshint的参数 */ },
+     concat: { /* concat的参数 */ },
+    uglify: { /* uglify的参数 */ },
+     watch:  { /* watch的参数 */ }
+    });
+
+    // 从node_modules目录加载模块文件
+    grunt.loadNpmTasks(&#39;grunt-contrib-jshint&#39;);
+    grunt.loadNpmTasks(&#39;grunt-contrib-concat&#39;);
+    grunt.loadNpmTasks(&#39;grunt-contrib-uglify&#39;);
+    grunt.loadNpmTasks(&#39;grunt-contrib-watch&#39;);
+
+    // 每行registerTask定义一个任务
+    grunt.registerTask(&#39;default&#39;, [&#39;jshint&#39;, &#39;concat&#39;, &#39;uglify&#39;]);
+    grunt.registerTask(&#39;check&#39;, [&#39;jshint&#39;]);
+
+};</pre><p>CoffeeScript 版</p>
+<pre>module.exports = (grunt)-&gt;
+
+    # 配置Grunt各种模块的参数
+    grunt.initConfig(
+    pkg: grunt.file.readJSON(&#39;package.json&#39;)
+
+   #从node_modules目录加载模块文件
+    grunt.loadNpmTasks &#39;grunt-contrib-clean&#39;
+    grunt.loadNpmTasks &#39;grunt-contrib-coffee&#39;
+    grunt.loadNpmTasks &#39;grunt-contrib-less&#39;
+    grunt.loadNpmTasks &#39;grunt-contrib-yuidoc&#39;
+    grunt.loadNpmTasks &#39;grunt-contrib-copy&#39;
+
+    grunt.registerTask &#39;build&#39;, [
+    &#39;clean:build&#39;,
+    &#39;coffee&#39;,
+    &#39;less:build&#39;,
+    ]
+    grunt.registerTask &#39;dist&#39;, [ &#39;build&#39;, &#39;clean:dist&#39;, &#39;copy:build&#39;]</pre></div>
+</div>
+</div>
+    <div class="footer">
+      <p>By zhangxingkai CY2848. Tel: 15810885265</p>
+      <p class="copyright">powered by <a href="http://lab.lepture.com/nico/">nico</a> 0.5.1</p>
+    </div>
+    <script src="http://static.alipayobjects.com/seajs/1.2.1/sea.js" data-main="../../static/one.js"></script>
+  </body>
+</html>
